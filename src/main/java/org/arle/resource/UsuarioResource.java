@@ -1,13 +1,4 @@
 package org.arle.resource;
-
-import jakarta.inject.Inject;
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.Response;
-import org.arle.model.Usuario;
-import org.arle.service.UsuarioService;
-import java.util.List;
-
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -23,6 +14,11 @@ public class UsuarioResource {
 
     @Inject
     private UsuarioService service;
+
+    // Añadimos este setter para las pruebas
+    public void setService(UsuarioService service) {
+        this.service = service;
+    }
 
     @GET
     public Response getAll() {
